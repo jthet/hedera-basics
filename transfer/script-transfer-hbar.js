@@ -19,6 +19,7 @@ const logger = await createLogger({
   scriptId: 'transferHbar',
   scriptCategory: 'task',
 });
+
 let client;
 
 async function scriptTransferHbar() {
@@ -37,6 +38,8 @@ async function scriptTransferHbar() {
       'Must set YOUR_NAME, OPERATOR_ACCOUNT_ID, OPERATOR_ACCOUNT_PRIVATE_KEY',
     );
   }
+
+  // Uses secrets from .env file
   const operatorId = AccountId.fromString(operatorIdStr);
   const operatorKey = PrivateKey.fromStringECDSA(operatorKeyStr);
   logger.log('Using account:', operatorIdStr);
@@ -86,7 +89,7 @@ async function scriptTransferHbar() {
 
   // NOTE: Query HBAR balance using AccountBalanceQuery
   const newAccountBalance = new AccountBalanceQuery()
-    .setAccountId('0.0.1')
+    .setAccountId('0.0.201')
     .execute(client);
   const newHbarBalance = (await newAccountBalance).hbars;
   logger.log(
@@ -126,11 +129,11 @@ async function scriptTransferHbar() {
   const transferFetch = await fetch(transferTxVerifyMirrorNodeApiUrl);
   const transferJson = await transferFetch.json();
   const transferJsonAccountTransfers = transferJson?.transactions[0]?.transfers;
-  // console.log(transferJsonAccountTransfers);
+  console.log(transferJsonAccountTransfers);
   const transferJsonAccountTransfersFinalAmounts = transferJsonAccountTransfers
     ?.filter((entry) => {
       // Discard all entries whose values are less than 0.1 hbars
-      // as these are network fees
+      // as these are probably network fees
       return Math.abs(entry.amount) >= 100_000_00;
     })
     ?.sort((entryA, entryB) => {

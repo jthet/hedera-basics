@@ -1,5 +1,11 @@
 # Hello Future World - Javascript
 
+## Jthet Fork. I followed the demo and have my own scripts in here as well.
+
+---
+
+## I followed the demo and have my own scripts in here as well. This demo consists of connecting to the hedera network through their javascript api and building basic applications.
+
 Demo repo for Hello World sequences to build on Hedera, using Javascript.
 
 <a href="https://gitpod.io/?autostart=true&editor=code&workspaceClass=g1-standard#https://github.com/hedera-dev/hello-future-world-js" target="_blank" rel="noreferrer">
@@ -345,3 +351,5 @@ In upstream base template repo
 ## Licence
 
 MIT
+
+# hedera-basics
