@@ -1,6 +1,6 @@
 # Hello Future World - Javascript
 
-## Jthet Fork. I followed the demo and have my own scripts in here as well.
+## Jthet Fork
 
 ---
 
@@ -351,5 +351,3 @@ In upstream base template repo
 ## Licence
 
 MIT
-
-# hedera-basics
