@@ -2,9 +2,7 @@
 
 ## Jthet Fork
 
----
-
-## I followed the demo and have my own scripts in here as well. This demo consists of connecting to the hedera network through their javascript api and building basic applications.
+I followed the demo and have my own scripts in here as well. This demo consists of connecting to the hedera network through their javascript api and building basic applications.
 
 Demo repo for Hello World sequences to build on Hedera, using Javascript.
 
